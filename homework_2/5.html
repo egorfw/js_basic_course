@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
+Необходимо реализовать функцию:
+mathOperation(arg1, arg2, operation);
+Параметры:
+arg1 - первое число.
+arg2 - второе число.
+operation - строка, которая содержит один символ из: "+", "-", "*", "/".
+Функция mathOperation должна вернуть результат операции, который был передан в
+параметр operation для двух первых аргументов (arg1 и arg2).
+Функция mathOperation должна использовать для вычисления функции из 4 задания.
+
+Примеры вызова функции:
+console.log(mathOperation(5, 3, "+")); // 8
+console.log(mathOperation(5, 3, ":)")); // NaN
+
+Функции mathOperation всегда передаются корректные числа, проверки на NaN,
+Infinity делать не нужно, однако, в случае если был передан некорректный
+аргумент в параметр operation, необходимо вернуть NaN.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+<script>
+  "use strict";
+
+  /**
+   * Складывает целые и вещественные числа.
+   * Выводит результат в консоль.
+   * @param {number} x - Первое слагаемое
+   * @param {number} y - Второе слагаемое
+  */
+  function sum(x, y) {
+    console.log(x + y);
+  }
+  
+  /**
+   * Вычитает целые и вещественные числа.
+   * Выводит результат в консоль.
+   * Из большего вычитается меньшее.
+   * @param {number} x - Уменьшаемое число
+   * @param {number} y - Вычитаемое число
+  */
+  function sub(x, y) {
+    if (x > y) {
+      console.log(x - y);
+    } else {
+      console.log(y - x);
+    }
+  }
+
+  /**
+   * Умножает целые и вещественные числа.
+   * Выводит результат в консоль.
+   * @param {number} x - Первый множитель
+   * @param {number} y - Второй множитель
+  */
+  function mul(x, y) {
+    console.log(x * y);
+  }
+
+  /**
+   * Делит целые и вещественные числа.
+   * Выводит результат в консоль.
+   * @param {number} x - Делимое число
+   * @param {number} y - Делитель
+  */
+  function div(x, y) {
+    console.log(x / y);
+  }
+
+  function mathOperation(x, y, operation) {
+    if (operation == "+") {
+      return sum(x, y);
+    } else if (operation == "-") {
+      return sub(x, y);
+    } else if (operation == "*") {
+      return mul(x, y);
+    } else if (operation == "/") {
+      return div(x, y);
+    } else {
+      return NaN
+    }
+  }
+  
+  console.log(mathOperation(3, 4, "+"));
+  console.log(mathOperation(3, 4, "-"));
+  console.log(mathOperation(-3, 4, "*"));
+  console.log(mathOperation(3, -4, "/"));
+  console.log(mathOperation(3, -4, "^|^"));
+  
+</script>
+</body>
+</html>
